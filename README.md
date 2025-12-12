@@ -8,7 +8,6 @@ A Flask app to track eco-friendly actions and CO2 savings.
 2. Click the green **Code** button
 3. Click **Download ZIP**
 4. Extract the ZIP to any folder
-5. Rename ZIP to `code.zip` if needed for submission
 
 ## How to Run
 1. Open command prompt in folder:  
@@ -37,6 +36,7 @@ Register and login,
 Log eco actions (such as walking and cycling),
 Track daily and weekly CO2 savings,
 View all logged actions,
+
 
 
 
