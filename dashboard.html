@@ -1,0 +1,40 @@
+<!-- dashboard -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+<p>Hello {{ user.display_name }}</p>
+
+<!-- stats -->
+<div class="summary">
+    <div class="card">
+        <h2>Today</h2>
+        <p>{{ "%.1f"|format(total_today) }} kg</p>
+    </div>
+    <div class="card">
+        <h2>Week</h2>
+        <p>{{ "%.1f"|format(total_week) }} kg</p>
+    </div>
+</div>
+
+<p><a href="{{ url_for('new_log') }}">Log action</a></p>
+
+<!-- recent log -->
+<h2>Recent</h2>
+{% if logs %}
+<table>
+<tr><th>Date</th><th>Action</th><th>CO2</th></tr>
+{% for log in logs %}
+<tr>
+    <td>{{ log.date }}</td>
+    <td>{{ log.action_type.name }}</td>
+    <td>{{ "%.1f"|format(log.co2_saving) }}</td>
+</tr>
+{% endfor %}
+</table>
+{% else %}
+<p>No actions.</p>
+{% endif %}
+
+{% endblock %}
+
+

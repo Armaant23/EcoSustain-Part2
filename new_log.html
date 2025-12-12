@@ -1,0 +1,23 @@
+<!-- new log -->
+{% extends "base.html" %}
+{% block content %}
+<h1>Log Action</h1>
+
+
+<!-- form -->
+<form method="post">
+    <label>Action<br>
+    <select name="action_type" required>
+        <option value="">Pick one</option>
+        {% for a in action_types %}
+        <option value="{{ a.id }}">{{ a.name }} ({{ a.default_co2_saving }} kg)</option>
+        {% endfor %}
+    </select>
+    </label><br><br>
+    
+
+    <label>Date<br><input type="date" name="date" value="{{ today }}"></label><br><br>
+    <button>Save</button>
+</form>
+{% endblock %}
+
